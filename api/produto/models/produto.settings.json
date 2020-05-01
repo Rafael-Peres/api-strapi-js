@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produtos",
+  "info": {
+    "name": "produto"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true,
+      "minLength": 3
+    },
+    "preco": {
+      "type": "decimal",
+      "required": true
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "produtos"
+    }
+  }
+}
